@@ -127,7 +127,7 @@ function makeRequest () {
 
 }
 
-var j = schedule.scheduleJob('13 11 * * *', makeRequest);
-console.log('Job scheduled');
+var j = schedule.scheduleJob('15 11 * * *', makeRequest);
+console.log('Job scheduled', new Date());
 
 module.exports = app ;
