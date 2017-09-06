@@ -125,6 +125,6 @@ function makeRequest () {
 
 }
 
-var j = schedule.scheduleJob('30 13 * * *', makeRequest);
+var j = schedule.scheduleJob('30 11 * * *', makeRequest);
 
 module.exports = app ;
