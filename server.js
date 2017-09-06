@@ -1,7 +1,9 @@
 //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
-    morgan  = require('morgan');
+    morgan  = require('morgan'),
+    schedule = require('node-schedule'),
+    request = require('request');
     
 Object.assign=require('object-assign')
 
@@ -101,5 +103,28 @@ initDb(function(err){
 
 app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
+
+function makeRequest () {
+  request.post({
+    url: 'https://csgokingdom.com/api/crates/open',
+    json: true,
+    body: {
+      amount: 1,
+      crateId: "31c848fa-2b5a-40ab-b4b7-1b22a0a5296b"
+    },
+    headers: {
+      'referer': 'https://csgokingdom.com/open/daily',
+      'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36',
+      'authority': 'csgokingdom.com',
+      'origin': 'https://csgokingdom.com',
+      'cookie': '__cfduid=de2123d6f27dabec1b800a7b184a58d671504634946; _gat=1; session=s%3ABpoz4z-MweLdFMdiJF3-CwKZiDH1D4-Z.cAdx6FM2Mi6zu0drwVSA3PmQBYEIh4Vl%2FpYnuCMXQCA; _ga=GA1.2.732526810.1504634948; _gid=GA1.2.1739812685.1504634948; kdms=b9194d4f1c6b19b3d8f693aa2e6c474242636570; io=JVKgwJObnK47bDzPAHZM'
+    }
+  }, function(err, httpResponse, body) {
+    console.log(body);
+  });
+
+}
+
+var j = schedule.scheduleJob('30 13 * * *', makeRequest);
 
 module.exports = app ;
