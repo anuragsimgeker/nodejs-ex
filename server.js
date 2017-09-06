@@ -105,6 +105,7 @@ app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 function makeRequest () {
+  console.log('Job running');
   request.post({
     url: 'https://csgokingdom.com/api/crates/open',
     json: true,
@@ -121,10 +122,12 @@ function makeRequest () {
     }
   }, function(err, httpResponse, body) {
     console.log(body);
+    console.log('Job done');
   });
 
 }
 
-var j = schedule.scheduleJob('30 11 * * *', makeRequest);
+var j = schedule.scheduleJob('54 11 * * *', makeRequest);
+console.log('Job scheduled');
 
 module.exports = app ;
