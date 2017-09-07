@@ -127,7 +127,7 @@ function makeRequest () {
 
 }
 
-var j = schedule.scheduleJob('40 19 * * *', makeRequest); // UTC
+var j = schedule.scheduleJob('50 20 * * *', makeRequest); // UTC
 console.log('Job scheduled', new Date());
 
 module.exports = app ;
