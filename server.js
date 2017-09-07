@@ -105,7 +105,7 @@ app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 function makeRequest () {
-  console.log('Job running');
+  console.log('Job running', new Date());
   request.post({
     url: 'https://csgokingdom.com/api/crates/open',
     json: true,
