@@ -118,7 +118,7 @@ function makeRequest () {
       'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36',
       'authority': 'csgokingdom.com',
       'origin': 'https://csgokingdom.com',
-      'cookie': '__cfduid=de2123d6f27dabec1b800a7b184a58d671504634946; session=s%3ANqeyhWccoM-DvKYWmj4pPsaknfBbQaNf.PTFLoxXKyun6md%2Fu2GpTB%2B5Cgz2xzT1OfYP1IUTN%2F%2FA; _ga=GA1.2.732526810.1504634948; _gid=GA1.2.1426458477.1505341307; kdms=b26e21f51f76bf6e0035b394cae347719bccf104; io=P2Ry8uDT9lTwrzr6AD2S; _gat=1'
+      'cookie': '__cfduid=d11118614952385c4878cdfd518a25b731506019967; session=s%3A4bkyoCWMtqBBPMCAp0xzEPHJlO4vk2RW.LjvpvAb%2FnOoXu8Mo54o7ln1cJpmQrA7XZVVa0Grshik; kdms=e209c75990a8b562ffee8d1b85c14833fa0bf38f; io=X9bPNbLY-5ZjamdeAC0Q'
     }
   }, function(err, httpResponse, body) {
     console.log(body);
